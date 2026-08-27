@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            (function () {
+            const theme = localStorage.getItem('theme');
+
+            if (theme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+             }
+            })();
+        </script>
+
+        <title>Créer un compte</title><link rel="stylesheet" href="/css/style.css">
+      
+    </head>
+    <body class="auth-page">
+        <div class="auth-card">
+            <a href="/" class="logo">📚 BiblioSpace</a><h1>Créer un compte</h1>
+                <form id="registerForm">
+                    <input id="first_name" placeholder="Prénom" required>
+                    <input id="last_name" placeholder="Nom" required>
+                    <input id="email" type="email" placeholder="Email" required>
+                    <input id="phone" placeholder="Téléphone">
+                    <input id="address" placeholder="Adresse">
+        <div class="field">
+            <label for="password">Mot de passe *</label>
+
+            <input
+                class="input"
+                id="password"
+                name="password"
+                type="password"
+                minlength="6"
+                autocomplete="new-password"
+                required
+            >
+        </div>
+
+        <div class="field">
+            <label for="confirm">Confirmation du mot de passe *</label>
+
+            <input
+                class="input"
+                id="confirm"
+                name="confirm"
+                type="password"
+                minlength="6"
+                autocomplete="new-password"
+                required
+            >
+        </div>
+    <button class="btn" type="submit">Créer mon compte</button>
+                </form>
+        <div id="message" class="message"></div>
+        <p>Déjà inscrit ? <a href="/login.html">Se connecter</a>
+        </p>
+    </div>
+        <script src="/js/auth.js"></script>
+        
+    </body>
+</html>

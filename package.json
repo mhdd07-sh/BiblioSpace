@@ -1,0 +1,21 @@
+{
+  "name": "bibliotheque-app",
+  "version": "1.0.0",
+  "description": "Plateforme web de gestion de bibliotheque - HTML CSS JavaScript Node.js PostgreSQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed:admin": "node seed-admin.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodejs": "^0.0.0",
+    "pg": "^8.16.3"
+  }
+}

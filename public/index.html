@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    (function () {
+        const theme = localStorage.getItem('theme');
+
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    })();
+</script>
+  <title>Bibliothèque - Accueil</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  
+</head>
+<body>
+<header class="site-header">
+  <a href="/" class="logo">📚 BiblioSpace</a>
+  <nav>
+    <a href="/books.html">Livres</a>
+    <a href="#about">À propos</a>
+    <a href="#how">Comment ça marche</a>
+    <a class="btn btn-outline" href="/login.html">Se connecter</a>
+    <a class="btn" href="/register.html">Créer un compte</a>
+    <button id="themeToggle" class="theme-toggle" type="button">
+      🌙 Mode sombre
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content reveal">
+      <span class="eyebrow">Bibliothèque numérique</span>
+      <h1>Découvrez votre prochaine lecture.</h1>
+      <p>Recherchez, empruntez et suivez vos livres simplement depuis une plateforme moderne.</p>
+      <div class="hero-actions">
+        <a class="btn" href="/books.html">Découvrir les livres</a>
+        <a class="btn btn-light" href="/register.html">Créer un compte</a>
+      </div>
+    </div>
+    <div class="hero-art float">
+      <div class="book-stack">
+        <div class="book book-1">📘</div>
+        <div class="book book-2">📕</div>
+        <div class="book book-3">📗</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" id="stats">
+    <div><strong id="statBooks">—</strong><span>Livres</span></div>
+    <div><strong id="statMembers">—</strong><span>Membres</span></div>
+    <div><strong id="statLoans">—</strong><span>Emprunts actifs</span></div>
+  </section>
+
+  <section id="about" class="section reveal">
+    <div>
+      <span class="eyebrow">Pourquoi BiblioSpace ?</span>
+      <h2>Une bibliothèque plus simple et plus moderne.</h2>
+      <p>Centralisez les livres, les catégories et les emprunts dans une seule plateforme.</p>
+    </div>
+    <div class="cards-3">
+      <article class="info-card"><h3>🔎 Recherche rapide</h3><p>Trouvez un ouvrage par titre, auteur ou ISBN.</p></article>
+      <article class="info-card"><h3>📚 Emprunts simplifiés</h3><p>Empruntez un livre et suivez sa date de retour.</p></article>
+      <article class="info-card"><h3>📊 Gestion centralisée</h3><p>Les bibliothécaires disposent d'un espace d'administration.</p></article>
+    </div>
+  </section>
+
+  <section id="how" class="section reveal">
+    <span class="eyebrow">Comment ça marche ?</span>
+    <h2>En trois étapes</h2>
+    <div class="steps">
+      <div><span>1</span><h3>Rechercher</h3><p>Parcourez le catalogue.</p></div>
+      <div><span>2</span><h3>Emprunter</h3><p>Choisissez un livre disponible.</p></div>
+      <div><span>3</span><h3>Retourner</h3><p>Le bibliothécaire enregistre le retour.</p></div>
+    </div>
+  </section>
+
+  <section class="cta reveal"><h2>Prêt à découvrir votre prochaine lecture ?</h2><a class="btn" href="/register.html">Créer mon compte</a></section>
+</main>
+
+<footer class="site-footer">© 2026 BiblioSpace — Projet de développement web</footer>
+<script src="/js/main.js"></script>
+
+
+<script>
+    const themeToggle = document.getElementById('themeToggle');
+
+    function updateThemeButton() {
+        const dark = document.documentElement.classList.contains('dark-mode');
+
+        if (dark) {
+            themeToggle.textContent = '☀️ Mode clair';
+        } else {
+            themeToggle.textContent = '🌙 Mode sombre';
+        }
+    }
+
+    themeToggle.addEventListener('click', () => {
+
+        const dark =
+            document.documentElement.classList.toggle('dark-mode');
+
+        localStorage.setItem(
+            'theme',
+            dark ? 'dark' : 'light'
+        );
+
+        updateThemeButton();
+    });
+
+    updateThemeButton();
+</script>
+</body>
+</html>

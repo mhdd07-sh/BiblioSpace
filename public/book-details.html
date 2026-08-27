@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <script>
+    (function () {
+        const theme = localStorage.getItem('theme');
+
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+    })();
+    </script>
+
+    <title>Détails du livre - BiblioSpace</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <a href="/" class="logo">
+        📚 BiblioSpace
+    </a>
+
+    <nav>
+
+        <a href="/books.html">
+            Catalogue
+        </a>
+
+        <a  href="/dashboard.html" id="spaceLink">
+            Mon espace
+        </a>
+
+      
+
+    </nav>
+
+</header>
+
+
+
+<main class="page book-details-page">
+
+    <div id="bookDetails">
+
+        <div class="loading">
+
+            <p>
+                📚 Chargement du livre...
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script src="/js/book-details.js"></script>
+<script src="/js/space.js"></script>
+
+
+</body>
+
+</html>

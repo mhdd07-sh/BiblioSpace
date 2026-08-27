@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+        <script>
+        (function () {
+            const theme = localStorage.getItem('theme');
+
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+
+    <title>Modifier un livre - BiblioSpace</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <a href="/" class="logo">
+        📚 BiblioSpace Admin
+    </a>
+
+    <nav>
+
+        <a href="/admin.html">
+            Administration
+        </a>
+
+        <a href="/books.html">
+            Catalogue
+        </a>
+
+        <a href="#" id="logout">
+            Déconnexion
+        </a>
+
+       
+
+    </nav>
+
+</header>
+
+
+<main class="page">
+
+    <div class="page-head">
+
+        <div>
+
+            <span class="eyebrow">
+                Administration
+            </span>
+
+            <h1>
+                Modifier le livre
+            </h1>
+
+            <p>
+                Modifiez les informations du livre puis
+                enregistrez les changements.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <section class="section">
+
+        <form
+            id="editBookForm"
+            class="admin-form"
+        >
+
+            <input
+                id="title"
+                placeholder="Titre"
+                required
+            >
+
+            <input
+                id="author"
+                placeholder="Auteur"
+                required
+            >
+
+            <input
+                id="isbn"
+                placeholder="ISBN"
+            >
+
+            <input
+                id="genre"
+                placeholder="Genre"
+            >
+
+            <input
+                id="pages"
+                type="number"
+                placeholder="Nombre de pages"
+            >
+
+            <input
+                id="publishedYear"
+                type="number"
+                placeholder="Année de publication"
+            >
+
+            <input
+                id="publisher"
+                placeholder="Éditeur"
+            >
+
+            <input
+                id="stock"
+                type="number"
+                min="0"
+                placeholder="Stock"
+                required
+            >
+
+            <input
+                id="cover"
+                placeholder="URL de la couverture"
+            >
+
+            <textarea
+                id="description"
+                placeholder="Description"
+                rows="6"
+            ></textarea>
+
+
+            <div class="edit-actions">
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Enregistrer les modifications
+                </button>
+
+                <a
+                    href="/admin.html"
+                    class="btn btn-outline"
+                >
+                    Annuler
+                </a>
+
+            </div>
+
+        </form>
+
+
+        <div
+            id="message"
+            class="message"
+        ></div>
+
+    </section>
+
+</main>
+
+
+<script src="/js/edit-book.js"></script>
+
+
+</body>
+
+</html>
