@@ -15,10 +15,10 @@ const {
 } = require('../services/bookService');
 
 
-// =====================================================
+
 // GET /api/books
 // Tous les livres + statistiques
-// =====================================================
+
 
 router.get('/', (req, res) => {
 
@@ -31,9 +31,9 @@ router.get('/', (req, res) => {
         } = req.query;
 
 
-        // =============================================
+        
         // Récupération des livres
-        // =============================================
+        
 
         let books;
 
@@ -58,16 +58,16 @@ router.get('/', (req, res) => {
         }
 
 
-        // =============================================
+      
         // Statistiques globales du catalogue
-        // =============================================
+        
 
         const stats = getBookStats();
 
 
-        // =============================================
+        
         // Statistiques des résultats actuels
-        // =============================================
+   
 
         const resultAvailable = books.filter(
             book => book.available === true
@@ -78,9 +78,9 @@ router.get('/', (req, res) => {
         ).length;
 
 
-        // =============================================
+        
         // Réponse
-        // =============================================
+       
 
         res.json({
 
@@ -132,10 +132,9 @@ router.get('/', (req, res) => {
 });
 
 
-// =====================================================
 // GET /api/books/:id
 // Récupérer un livre
-// =====================================================
+
 
 router.get('/:id', (req, res) => {
 
@@ -184,10 +183,9 @@ router.get('/:id', (req, res) => {
 });
 
 
-// =====================================================
 // POST /api/books
 // Ajouter un livre
-// =====================================================
+
 
 router.post('/', (req, res) => {
 
@@ -258,10 +256,10 @@ router.post('/', (req, res) => {
 });
 
 
-// =====================================================
+
 // PUT /api/books/:id
 // Modifier un livre
-// =====================================================
+
 
 router.put('/:id', (req, res) => {
 
@@ -316,10 +314,10 @@ router.put('/:id', (req, res) => {
 });
 
 
-// =====================================================
+
 // PATCH /api/books/:id/availability
 // Modifier uniquement la disponibilité
-// =====================================================
+
 
 router.patch(
     '/:id/availability',
@@ -395,10 +393,10 @@ router.patch(
 );
 
 
-// =====================================================
+
 // DELETE /api/books/:id
 // Supprimer un livre
-// =====================================================
+
 
 router.delete('/:id', (req, res) => {
 

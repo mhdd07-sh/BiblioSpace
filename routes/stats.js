@@ -7,12 +7,10 @@ const router = express.Router();
 
 router.get('/', authenticateToken, requireAdmin, async (_req, res) => {
   try {
-    /*
-     * ============================================================
-     * LIVRES
-     * Les livres sont  stockés dans data/db.json
-     * ============================================================
-     */
+   
+      //LIVRES
+
+     
     const books = await bookService.getAllBooks();
 
     const totalBooks = books.length;
@@ -26,11 +24,9 @@ router.get('/', authenticateToken, requireAdmin, async (_req, res) => {
     ).length;
 
 
-    /*
-     * ============================================================
-     * UTILISATEURS ET EMPRUNTS
-     * ============================================================
-     */
+    
+     // UTILISATEURS ET EMPRUNTS
+     
     const [
       membersResult,
       activeResult,
@@ -76,11 +72,9 @@ router.get('/', authenticateToken, requireAdmin, async (_req, res) => {
     ]);
 
 
-    /*
-     * ============================================================
-     * CATÉGORIES
-     * ============================================================
-     */
+    
+     // CATÉGORIES
+     
 
     const categoryMap = {};
 
@@ -106,11 +100,9 @@ router.get('/', authenticateToken, requireAdmin, async (_req, res) => {
       .sort((a, b) => b.count - a.count);
 
 
-    /*
-     * ============================================================
-     * LIVRES LES PLUS POPULAIRES
-     * ============================================================
-     */
+    
+     // LIVRES LES PLUS POPULAIRES
+     
 
     const popularLoansResult = await pool.query(`
       SELECT
@@ -137,11 +129,9 @@ router.get('/', authenticateToken, requireAdmin, async (_req, res) => {
     });
 
 
-    /*
-     * ============================================================
-     * RÉPONSE API
-     * ============================================================
-     */
+ 
+     // RÉPONSE API
+     
 
     res.json({
       success: true,

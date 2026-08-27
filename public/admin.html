@@ -2,14 +2,10 @@
 <html lang="fr">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-         <script>
+    <script>
         (function () {
             const theme = localStorage.getItem('theme');
 
@@ -17,575 +13,346 @@
                 document.documentElement.classList.add('dark-mode');
             }
         })();
-        </script>
+    </script>
 
     <title>Administration - BiblioSpace</title>
 
-    <link
-        rel="stylesheet"
-        href="/css/style.css"
-    >
-
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-
 
 <body>
 
+    <!-- HEADER -->
 
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
-
-<header class="site-header">
-
-    <a
-        href="/"
-        class="logo"
-    >
-        📚 BiblioSpace Admin
-    </a>
-
-
-    <nav>
-
-        <a href="/books.html">
-            Catalogue
+    <header class="site-header">
+        <a href="/" class="logo">
+            📚 BiblioSpace Admin
         </a>
 
-        <a href="#" id="logout">
-            Déconnexion
-        </a>
+        <nav>
+            <a href="/books.html">
+                Catalogue
+            </a>
 
-       
+            <a href="#" id="logout">
+                Déconnexion
+            </a>
+        </nav>
+    </header>
 
-    </nav>
+    <!-- CONTENU PRINCIPAL -->
 
-</header>
+    <main class="page">
 
-
-
-<!-- =====================================================
-     CONTENU PRINCIPAL
-     ===================================================== -->
-
-<main class="page">
-
-
-    <!-- =================================================
-         TITRE
-         ================================================= -->
-
-    <div class="page-head">
-
-        <div>
-
-            <span class="eyebrow">
-                Administration
-            </span>
-
-            <h1>
-                Tableau de bord
-            </h1>
-
-            <p>
-                Gestion des livres, des stocks et des emprunts.
-            </p>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =================================================
-         STATISTIQUES
-         ================================================= -->
-
-    <div class="cards-4">
-
-
-        <div class="metric">
-
-            <strong id="sBooks">
-                0
-            </strong>
-
-            <span>
-                Livres
-            </span>
-
-        </div>
-
-
-        <div class="metric">
-
-            <strong id="sMembers">
-                0
-            </strong>
-
-            <span>
-                Membres
-            </span>
-
-        </div>
-
-
-        <div class="metric">
-
-            <strong id="sActive">
-                0
-            </strong>
-
-            <span>
-                Emprunts actifs
-            </span>
-
-        </div>
-
-
-        <div class="metric">
-
-            <strong id="sLate">
-                0
-            </strong>
-
-            <span>
-                Retards
-            </span>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =================================================
-         GESTION DES LIVRES
-         ================================================= -->
-
-    <section class="section">
+        <!-- TITRE -->
 
         <div class="page-head">
-
             <div>
-
                 <span class="eyebrow">
-                    Catalogue
+                    Administration
                 </span>
 
-                <h2>
-                    Ajout des livres
-                </h2>
+                <h1>
+                    Tableau de bord
+                </h1>
 
+                <p>
+                    Gestion des livres, des stocks et des emprunts.
+                </p>
             </div>
-
         </div>
-
-
 
         <!-- =================================================
-             FORMULAIRE AJOUT / MODIFICATION
+             STATISTIQUES
              ================================================= -->
 
-        <div class="info-card">
-
-            <h3 id="formTitle">
-                Ajouter un livre
-            </h3>
-
-
-            <form
-                id="bookForm"
-                class="admin-form"
-            >
-
-
-                <!-- ID caché pour la modification -->
-
-                <input
-                    type="hidden"
-                    id="bookId"
-                >
-
-
-                <!-- TITRE -->
-
-                <input
-                    id="title"
-                    type="text"
-                    placeholder="Titre"
-                    required
-                >
-
-
-                <!-- AUTEUR -->
-
-                <input
-                    id="author"
-                    type="text"
-                    placeholder="Auteur"
-                    required
-                >
-
-
-                <!-- ISBN -->
-
-                <input
-                    id="isbn13"
-                    type="text"
-                    placeholder="ISBN"
-                >
-
-
-                <!-- GENRE -->
-
-                <select id="genre">
-
-                    <option value="">
-                        Sélectionner une catégorie
-                    </option>
-
-                    <option value="Droit">
-                        Droit
-                    </option>
-
-                    <option value="Économie">
-                        Économie
-                    </option>
-
-                    <option value="Histoire">
-                        Histoire
-                    </option>
-
-                    <option value="Informatique">
-                        Informatique
-                    </option>
-
-                    <option value="Mathématiques">
-                        Mathématiques
-                    </option>
-
-                    <option value="Roman">
-                        Roman
-                    </option>
-
-                    <option value="Sciences">
-                        Sciences
-                    </option>
-
-                    <option value="Science-fiction">
-                        Science-fiction
-                    </option>
-
-                    <option value="Littérature africaine">
-                        Littérature africaine
-                    </option>
-
-                </select>
-
-
-                <!-- NOMBRE DE PAGES -->
-
-                <input
-                    id="pages"
-                    type="number"
-                    min="1"
-                    placeholder="Nombre de pages"
-                >
-
-
-                <!-- ANNÉE -->
-
-                <input
-                    id="published_year"
-                    type="number"
-                    placeholder="Année de publication"
-                >
-
-
-                <!-- ÉDITEUR -->
-
-                <input
-                    id="publisher"
-                    type="text"
-                    placeholder="Éditeur"
-                >
-
-
-                <!-- STOCK -->
-
-                <input
-                    id="stock"
-                    type="number"
-                    min="1"
-                    value="1"
-                    placeholder="Stock total"
-                    required
-                >
-
-
-                <!-- STOCK DISPONIBLE -->
-
-                <input
-                    id="availableStock"
-                    type="number"
-                    min="0"
-                    value="1"
-                    placeholder="Stock disponible"
-                    required
-                >
-
-
-                <!-- URL IMAGE -->
-
-                <input
-                    id="cover_url"
-                    type="url"
-                    placeholder="URL de la couverture"
-                >
-
-
-                <!-- DESCRIPTION -->
-
-                <textarea
-                    id="description"
-                    placeholder="Description du livre"
-                ></textarea>
-
-
-                <!-- BOUTONS -->
-
-                <div
-                    style="
-                        grid-column: 1 / -1;
-                        display: flex;
-                        gap: 10px;
-                        flex-wrap: wrap;
-                    "
-                >
-
-                    <button
-                        class="btn"
-                        type="submit"
-                        id="submitBook"
-                    >
-                        Ajouter le livre
-                    </button>
-
-
-                    <button
-                        class="btn btn-outline"
-                        type="button"
-                        id="cancelEdit"
-                        style="display:none;"
-                    >
-                        Annuler
-                    </button>
-
-                </div>
-
-            </form>
-
-
-            <div
-                id="message"
-                class="message"
-            ></div>
-
-        </div>
-
-    </section>
-
-
-     <!-- =================================================
-         GESTION DES LIVRES
-         ================================================= -->
-
-<section class="section">
-
-    <div class="page-head">
-
-        <div>
-            <span class="eyebrow">
-                Gestion
-            </span>
-
-            <h2>
-                Gestion des livres
-            </h2>
-        </div>
-
-        <div class="filters">
-
-            <input
-                type="text"
-                id="searchBook"
-                placeholder="🔎 Rechercher un livre..."
-                autocomplete="off"
-            >
-
-        </div>
-
-    </div>
-
-
-    <div class="table-wrap">
-
-        <table>
-
-            <thead>
-
-                <tr>
-
-                    <th>
-                        Titre
-                    </th>
-
-                    <th>
-                        Auteur
-                    </th>
-
-                    <th>
-                        Catégorie
-                    </th>
-
-                    <th>
-                        Stock
-                    </th>
-
-                    <th>
-                        Disponible
-                    </th>
-
-                    <th>
-                        État
-                    </th>
-
-                    <th>
-                        Année
-                    </th>
-
-                    <th>
-                        Actions
-                    </th>
-
-                </tr>
-
-            </thead>
-
-            <tbody id="booksAdminBody">
-
-                <tr>
-                    <td colspan="8">
-                        Chargement...
-                    </td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-</section>
-
-
-
-    <!-- =================================================
-         GESTION DES EMPRUNTS
-         ================================================= -->
-
-    <section class="section">
-
-        <div class="page-head">
-
-            <div>
-
-                <span class="eyebrow">
-                    Emprunts
+        <div class="cards-4">
+            <div class="metric">
+                <strong id="sBooks">
+                    0
+                </strong>
+
+                <span>
+                    Livres
                 </span>
-
-                <h2>
-                    Gestion des emprunts
-                </h2>
-
             </div>
 
+            <div class="metric">
+                <strong id="sMembers">
+                    0
+                </strong>
+
+                <span>
+                    Membres
+                </span>
+            </div>
+
+            <div class="metric">
+                <strong id="sActive">
+                    0
+                </strong>
+
+                <span>
+                    Emprunts actifs
+                </span>
+            </div>
+
+            <div class="metric">
+                <strong id="sLate">
+                    0
+                </strong>
+
+                <span>
+                    Retards
+                </span>
+            </div>
         </div>
 
+        <!-- GESTION DES LIVRES -->
+
+        <section class="section">
+            <div class="page-head">
+                <div>
+                    <span class="eyebrow">
+                        Catalogue
+                    </span>
+
+                    <h2>
+                        Ajout des livres
+                    </h2>
+                </div>
+            </div>
+
+            <!--FORMULAIRE AJOUT / MODIFICATION -->
+
+            <div class="info-card">
+                <h3 id="formTitle">
+                    Ajouter un livre
+                </h3>
+
+                <form id="bookForm" class="admin-form">
+                    <!-- ID caché pour la modification -->
+                    <input type="hidden" id="bookId">
+
+                    <!-- TITRE -->
+                    <input id="title" type="text" placeholder="Titre" required>
+
+                    <!-- AUTEUR -->
+                    <input id="author" type="text" placeholder="Auteur" required>
+
+                    <!-- ISBN -->
+                    <input id="isbn13" type="text" placeholder="ISBN">
+
+                    <!-- GENRE -->
+                    <select id="genre">
+                        <option value="">
+                            Sélectionner une catégorie
+                        </option>
+
+                        <option value="Droit">
+                            Droit
+                        </option>
+
+                        <option value="Économie">
+                            Économie
+                        </option>
+
+                        <option value="Histoire">
+                            Histoire
+                        </option>
+
+                        <option value="Informatique">
+                            Informatique
+                        </option>
+
+                        <option value="Mathématiques">
+                            Mathématiques
+                        </option>
+
+                        <option value="Roman">
+                            Roman
+                        </option>
+
+                        <option value="Sciences">
+                            Sciences
+                        </option>
+
+                        <option value="Science-fiction">
+                            Science-fiction
+                        </option>
+
+                        <option value="Littérature africaine">
+                            Littérature africaine
+                        </option>
+                    </select>
+
+                    <!-- NOMBRE DE PAGES -->
+                    <input id="pages" type="number" min="1" placeholder="Nombre de pages">
+
+                    <!-- ANNÉE -->
+                    <input id="published_year" type="number" placeholder="Année de publication">
+
+                    <!-- ÉDITEUR -->
+                    <input id="publisher" type="text" placeholder="Éditeur">
+
+                    <!-- STOCK -->
+                    <input id="stock" type="number" min="1" value="1" placeholder="Stock total" required>
+
+                    <!-- STOCK DISPONIBLE -->
+                    <input id="availableStock" type="number" min="0" value="1" placeholder="Stock disponible" required>
+
+                    <!-- URL IMAGE -->
+                    <input id="cover_url" type="url" placeholder="URL de la couverture">
+
+                    <!-- DESCRIPTION -->
+                    <textarea id="description" placeholder="Description du livre"></textarea>
+
+                    <!-- BOUTONS -->
+                    <div style="grid-column: 1 / -1; display: flex; gap: 10px; flex-wrap: wrap;">
+                        <button class="btn" type="submit" id="submitBook">
+                            Ajouter le livre
+                        </button>
+
+                        <button class="btn btn-outline" type="button" id="cancelEdit" style="display:none;">
+                            Annuler
+                        </button>
+                    </div>
+                </form>
+
+                <div id="message" class="message"></div>
+            </div>
+        </section>
+
+        <!-- =================================================
+             GESTION DES LIVRES
+             ================================================= -->
+
+        <section class="section">
+            <div class="page-head">
+                <div>
+                    <span class="eyebrow">
+                        Gestion
+                    </span>
+
+                    <h2>
+                        Gestion des livres
+                    </h2>
+                </div>
+
+                <div class="filters">
+                    <input type="text" id="searchBook" placeholder="🔎 Rechercher un livre..." autocomplete="off">
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Titre
+                            </th>
+
+                            <th>
+                                Auteur
+                            </th>
+
+                            <th>
+                                Catégorie
+                            </th>
+
+                            <th>
+                                Stock
+                            </th>
+
+                            <th>
+                                Disponible
+                            </th>
+
+                            <th>
+                                État
+                            </th>
+
+                            <th>
+                                Année
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="booksAdminBody">
+                        <tr>
+                            <td colspan="8">
+                                Chargement...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- GESTION DES EMPRUNTS -->
+
+        <section class="section">
+            <div class="page-head">
+                <div>
+                    <span class="eyebrow">
+                        Emprunts
+                    </span>
+
+                    <h2>
+                        Gestion des emprunts
+                    </h2>
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Membre
+                            </th>
+
+                            <th>
+                                Livre
+                            </th>
+
+                            <th>
+                                Emprunt
+                            </th>
+
+                            <th>
+                                Retour prévu
+                            </th>
+
+                            <th>
+                                Statut
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="loansBody">
+                        <tr>
+                            <td colspan="6" style="text-align:center;">
+                                Chargement...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
 
 
-        <div class="table-wrap">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>
-                            Membre
-                        </th>
-
-                        <th>
-                            Livre
-                        </th>
-
-                        <th>
-                            Emprunt
-                        </th>
-
-                        <th>
-                            Retour prévu
-                        </th>
-
-                        <th>
-                            Statut
-                        </th>
-
-                        <th>
-                            Action
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-
-                <tbody id="loansBody">
-
-                    <tr>
-
-                        <td
-                            colspan="6"
-                            style="text-align:center;"
-                        >
-                            Chargement...
-
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </section>
-
-
-</main>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-     ===================================================== -->
-
-<script src="/js/admin.js"></script>
-
-
+    <script src="/js/admin.js"></script>
 
 </body>
 

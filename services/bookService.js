@@ -4,9 +4,8 @@ const path = require('path');
 const DB_PATH = path.join(__dirname, '..', 'data', 'db.json');
 
 
-// =====================================================
+
 // LIRE LA BASE JSON
-// =====================================================
 
 function readDatabase() {
     try {
@@ -43,9 +42,9 @@ function readDatabase() {
 }
 
 
-// =====================================================
+
 // ÉCRIRE DANS LA BASE JSON
-// =====================================================
+
 
 function writeDatabase(data) {
 
@@ -71,9 +70,9 @@ function writeDatabase(data) {
 }
 
 
-// =====================================================
+
 // RÉCUPÉRER TOUS LES LIVRES
-// =====================================================
+
 
 function getAllBooks() {
 
@@ -83,9 +82,9 @@ function getAllBooks() {
 }
 
 
-// =====================================================
+
 // RÉCUPÉRER UN LIVRE PAR SON ID
-// =====================================================
+
 
 function getBookById(id) {
 
@@ -97,9 +96,9 @@ function getBookById(id) {
 }
 
 
-// =====================================================
+
 // RECHERCHER DES LIVRES
-// =====================================================
+
 
 function searchBooks(query) {
 
@@ -132,9 +131,9 @@ function searchBooks(query) {
 }
 
 
-// =====================================================
+
 // FILTRER LES LIVRES
-// =====================================================
+
 
 function filterBooks(options = {}) {
 
@@ -216,9 +215,9 @@ function filterBooks(options = {}) {
 }
 
 
-// =====================================================
+
 // STATISTIQUES DU CATALOGUE
-// =====================================================
+
 
 function getBookStats() {
 
@@ -270,9 +269,9 @@ function getBookStats() {
 }
 
 
-// =====================================================
+
 // AJOUTER UN LIVRE
-// =====================================================
+
 
 function createBook(bookData) {
 
@@ -341,9 +340,9 @@ function createBook(bookData) {
 
     return book;
 }
-// =====================================================
+
 // MODIFIER UN LIVRE
-// =====================================================
+
 
 function updateBook(id, bookData) {
 
@@ -401,9 +400,9 @@ function updateBook(id, bookData) {
     return data.books[index];
 }
 
-// =====================================================
+
 // MODIFIER LA DISPONIBILITÉ
-// =====================================================
+
 
 function updateBookAvailability(id, available) {
 
@@ -434,9 +433,9 @@ function updateBookAvailability(id, available) {
 }
 
 
-// =====================================================
+
 // SUPPRIMER UN LIVRE
-// =====================================================
+
 
 function deleteBook(id) {
 
@@ -459,9 +458,9 @@ function deleteBook(id) {
 }
 
 
-// =====================================================
+
 // MODIFIER LE STOCK
-// =====================================================
+
 
 function updateBookStock(id, quantity) {
 
@@ -521,9 +520,9 @@ function updateBookStock(id, quantity) {
     return book;
 }
 
-// =====================================================
+
 // EXPORTS
-// =====================================================
+
 
 module.exports = {
 

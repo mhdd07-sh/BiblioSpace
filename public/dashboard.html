@@ -2,13 +2,10 @@
 <html lang="fr">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-         <script>
+    <script>
         (function () {
             const theme = localStorage.getItem('theme');
 
@@ -16,77 +13,39 @@
                 document.documentElement.classList.add('dark-mode');
             }
         })();
-        </script>
+    </script>
 
     <title>Mon espace - BiblioSpace</title>
 
-    <link
-        rel="stylesheet"
-        href="/css/style.css"
-    >
-
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-
 
 <body>
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
-
     <header class="site-header">
-
-        <a
-            href="/"
-            class="logo"
-        >
+        <a href="/" class="logo">
             📚 BiblioSpace
         </a>
 
-
         <nav>
-
             <a href="/books.html">
                 📚 Livres
             </a>
 
-            <a
-                href="/admin.html"
-                class="active"
-            >
+            <a href="/admin.html" class="active">
                 👤 Mon espace
             </a>
 
-            <a
-                href="#"
-                id="logout"
-            >
+            <a href="#" id="logout">
                 Déconnexion
             </a>
-
-        
-
         </nav>
-
     </header>
-
-
-
-    <!-- =====================================================
-         CONTENU
-    ====================================================== -->
 
     <main class="page">
 
-
-        <!-- =================================================
-             EN-TÊTE
-        ================================================== -->
-
         <div class="page-head">
-
             <div>
-
                 <span class="eyebrow">
                     Espace membre
                 </span>
@@ -103,27 +62,15 @@
                     Retrouvez ici vos emprunts,
                     vos retards et votre historique.
                 </p>
-
             </div>
-
         </div>
 
+        <!--STATISTIQUES -->
 
-
-        <!-- =================================================
-             STATISTIQUES
-        ================================================== -->
-
-        <section
-            class="cards-4 dashboard-stats"
-            aria-label="Statistiques de mes emprunts"
-        >
-
+        <section class="cards-4 dashboard-stats" aria-label="Statistiques de mes emprunts">
 
             <!-- Emprunts actifs -->
-
             <div class="metric">
-
                 <div class="metric-icon">
                     📖
                 </div>
@@ -135,15 +82,10 @@
                 <span>
                     Emprunts actifs
                 </span>
-
             </div>
 
-
-
             <!-- Retards -->
-
             <div class="metric">
-
                 <div class="metric-icon">
                     ⚠️
                 </div>
@@ -155,15 +97,10 @@
                 <span>
                     Retards
                 </span>
-
             </div>
 
-
-
             <!-- Retournés -->
-
             <div class="metric">
-
                 <div class="metric-icon">
                     ✅
                 </div>
@@ -175,15 +112,10 @@
                 <span>
                     Livres retournés
                 </span>
-
             </div>
 
-
-
             <!-- Total -->
-
             <div class="metric">
-
                 <div class="metric-icon">
                     📚
                 </div>
@@ -195,37 +127,20 @@
                 <span>
                     Total des emprunts
                 </span>
-
             </div>
 
         </section>
 
+        <!--MESSAGE -->
 
-
-        <!-- =================================================
-             MESSAGE
-        ================================================== -->
-
-        <div
-            id="dashboardMessage"
-            class="message"
-            role="status"
-            aria-live="polite"
-        >
+        <div id="dashboardMessage" class="message" role="status" aria-live="polite">
         </div>
 
-
-
-        <!-- =================================================
-             MES EMPRUNTS
-        ================================================== -->
+        <!-- MES EMPRUNTS -->
 
         <section class="section dashboard-loans">
-
             <div class="section-header">
-
                 <div>
-
                     <span class="eyebrow">
                         Historique
                     </span>
@@ -233,33 +148,17 @@
                     <h2>
                         Mes emprunts
                     </h2>
-
                 </div>
 
-
-                <a
-                    href="/books.html"
-                    class="btn"
-                >
+                <a href="/books.html" class="btn">
                     📚 Voir le catalogue
                 </a>
-
             </div>
 
-
-
-            <!-- =================================================
-                 TABLEAU
-            ================================================== -->
-
             <div class="table-wrap">
-
                 <table>
-
                     <thead>
-
                         <tr>
-
                             <th>
                                 Livre
                             </th>
@@ -275,47 +174,27 @@
                             <th>
                                 Statut
                             </th>
-
                         </tr>
-
                     </thead>
 
-
                     <tbody id="loansBody">
-
                         <tr>
-
-                            <td
-                                colspan="4"
-                                class="empty-table"
-                            >
+                            <td colspan="4" class="empty-table">
                                 📚 Chargement de vos emprunts...
                             </td>
-
                         </tr>
-
                     </tbody>
-
                 </table>
-
             </div>
-
         </section>
 
 
-
-        <!-- =================================================
-             INFORMATIONS
-        ================================================== -->
-
         <section class="info-card dashboard-info">
-
             <h3>
                 ℹ️ Informations importantes
             </h3>
 
             <ul>
-
                 <li>
                     Vous pourrez emprunter jusqu'à
                     <strong>3 livres simultanément</strong>.
@@ -335,37 +214,19 @@
                     Après son retour, le livre apparaîtra dans
                     votre historique comme <strong>Retourné</strong>.
                 </li>
-
             </ul>
-
         </section>
-
 
     </main>
 
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
     <footer class="site-footer">
-
         <p>
             © 2026 BiblioSpace —
             Plateforme de gestion de bibliothèque
         </p>
-
     </footer>
 
-
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
     <script src="/js/dashboard.js"></script>
-    
 
 </body>
 
