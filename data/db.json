@@ -509,21 +509,6 @@
       "stock": 3,
       "availableStock": 3,
       "available": true
-    },
-    {
-      "id": 39,
-      "title": "Le Gène égoïste",
-      "author": "Richard Dawkins",
-      "genre": "Sciences",
-      "isbn": "9780198788607",
-      "pages": 360,
-      "publishedYear": 1976,
-      "publisher": "Oxford University Press",
-      "description": "Un ouvrage consacré à l'évolution et à l'interprétation de la sélection naturelle du point de vue des gènes.",
-      "cover": "https://covers.openlibrary.org/b/isbn/9780198788607-L.jpg",
-      "stock": 3,
-      "availableStock": 3,
-      "available": true
     }
   ]
 }
