@@ -11,7 +11,7 @@
       "publisher": "Gallimard",
       "description": "Un conte poétique et philosophique racontant la rencontre d'un aviateur avec un mystérieux petit prince.",
       "cover": "https://covers.openlibrary.org/b/isbn/9782070612758-L.jpg",
-      "stock": 4,
+      "stock": 5,
       "availableStock": 3,
       "available": true
     },
@@ -57,7 +57,7 @@
       "description": "Un roman épistolaire majeur de la littérature sénégalaise.",
       "cover": "https://pictures.abebooks.com/isbn/9782723610421-fr.jpg",
       "stock": 3,
-      "availableStock": 2,
+      "availableStock": 3,
       "available": true
     },
     {
@@ -508,6 +508,21 @@
       "cover": "https://covers.openlibrary.org/b/isbn/9780345539434-L.jpg",
       "stock": 3,
       "availableStock": 3,
+      "available": true
+    },
+    {
+      "id": 37,
+      "title": "Le Gène égoïste",
+      "author": "Richard Dawkins",
+      "genre": "Sciences",
+      "isbn": "9780198788607",
+      "pages": 360,
+      "publishedYear": 1976,
+      "publisher": "Oxford University Press",
+      "description": "Un ouvrage consacré à l'évolution et à l'interprétation de la sélection naturelle du point de vue des gènes.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780198788607-L.jpg",
+      "stock": 4,
+      "availableStock": 4,
       "available": true
     }
   ]
